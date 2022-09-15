@@ -1,0 +1,34 @@
+{
+"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+"width": 800,
+"height": 450,
+"title": { "text": "Spread of Airbnbs Across New York City", "font": "sans-serif","fontSize": {"expr": "20"}},
+"projection": {"type": "equalEarth"},
+"layer": [
+{
+"data": {
+"url": "https://raw.githubusercontent.com/wickkan/FIT3179-Homework-Week-9/main/boroughs.geojson",
+"format": {"type": "topojson", "feature": "Borough%20Boundaries"}
+},
+"mark": {"type": "geoshape", "fill": "lightgray", "stroke": "black"}
+},
+{
+  "data": {
+"url":
+"https://raw.githubusercontent.com/wickkan/FIT3179-Homework-Week-9/main/AB_NYC_2019.csv"
+},
+"mark": {"type": "circle", "tooltip": {"content": "data"}},
+"encoding": {
+  "longitude": {"field": "longitude", "type": "quantitative"},
+  "latitude": {"field": "latitude", "type": "quantitative"}, 
+  "color": {"field": "neighbourhood_group", "type": "nominal", "title": "Boroughs"},
+"tooltip": [
+      {"field": "neighbourhood_group", "type": "nominal", "title": "Borough"},
+      {"field": "room_type", "type": "nominal", "title": "Room Type"},
+      {"field": "price", "type": "quantitative", "title": "Price"}
+
+]
+}
+}
+]
+}

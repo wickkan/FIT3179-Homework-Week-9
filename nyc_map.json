@@ -25,7 +25,7 @@
 "tooltip": [
       {"field": "neighbourhood_group", "type": "nominal", "title": "Borough"},
       {"field": "room_type", "type": "nominal", "title": "Room Type"},
-      {"field": "price", "type": "quantitative", "title": "Price"}
+      {"field": "price", "type": "quantitative", "title": "Price (USD)"}
 
 ]
 }
